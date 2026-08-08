@@ -1,0 +1,2 @@
+const mongoose = require('mongoose');
+module.exports = mongoose.model('Document', new mongoose.Schema({ title: { type: String, required: true }, type: { type: String, enum: ['invoice', 'letter', 'delivery-note', 'supplier', 'other'], default: 'other' }, url: { type: String, required: true }, mimeType: String, uploadedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' } }, { timestamps: true }));

@@ -1,0 +1,2 @@
+const mongoose = require('mongoose');
+module.exports = mongoose.model('Payroll', new mongoose.Schema({ user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, periodStart: Date, periodEnd: Date, hours: { type: Number, default: 0 }, grossAmount: { type: Number, default: 0 }, paidAmount: { type: Number, default: 0 }, status: { type: String, enum: ['pending', 'partial', 'paid'], default: 'pending' }, paidAt: Date }, { timestamps: true }));
